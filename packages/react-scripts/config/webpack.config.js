@@ -401,6 +401,15 @@ module.exports = function (webpackEnv) {
                 esModule: false,
               },
             },
+            // load isolated file
+            {
+              test: [/(\.worker\.js$|ISOLATED)/],
+              loader: require.resolve('file-loader'),
+              type: 'javascript/auto',
+              options: {
+                name: 'static/js/[name].[hash:8].[ext]',
+              },
+            },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
