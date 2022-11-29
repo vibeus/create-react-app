@@ -408,9 +408,10 @@ module.exports = function (webpackEnv) {
                   },
                 },
                 {
-                  loader: require.resolve('file-loader'),
+                  loader: require.resolve('url-loader'),
                   options: {
-                    name: 'static/media/[name].[hash][ext]',
+                    limit: imageInlineSizeLimit,
+                    name: 'static/media/[name].[hash].[ext]',
                   },
                 },
               ],
