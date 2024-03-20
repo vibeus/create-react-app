@@ -421,7 +421,7 @@ module.exports = function (webpackEnv) {
             },
             // load isolated file
             {
-              test: [/(\.worker\.js$|ISOLATED)/],
+              test: [/(\.worker\.(mjs|js)$|ISOLATED)/],
               type: 'asset/resource',
               generator: {
                 filename: 'static/js/[name].[hash:8][ext]',
